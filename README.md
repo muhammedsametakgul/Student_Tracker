@@ -18,8 +18,9 @@ Technologies/Frameworks/Design Patterns Used :
 * Spring MVC
 * Spring Security
 * Thymeleaf
-* MySQL
 * JPA
+* Maven
+* MySQL
 * HTML-CSS ( Get help by Udemy course which is "Spring Boot3, Spring 6 & Hibernate for beginners)
 ---------------------------
 Database Schema :

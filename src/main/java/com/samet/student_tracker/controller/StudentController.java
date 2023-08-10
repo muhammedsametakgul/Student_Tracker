@@ -6,8 +6,7 @@ import com.samet.student_tracker.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,5 +28,37 @@ public class StudentController {
         theModel.addAttribute("students",students);
 
         return "/list-students";
+    }
+
+    @GetMapping("/showFormForAdd")
+    public String showFormForAdd(Model theModel){
+        Student student = new Student();
+
+        theModel.addAttribute("student",student);
+
+        return "/student-form";
+    }
+
+    @PostMapping("/save")
+    public String saveStudent(@ModelAttribute("student") Student student){
+        studentService.save(student);
+
+        return "redirect:/students/list";
+    }
+
+    @GetMapping("/delete")
+    public String deleteStudent(@RequestParam("studentId") int theId){
+        studentService.deleteById(theId);
+
+        return "redirect:/students/list";
+    }
+
+    @GetMapping("/showFormForUpdate")
+    public String showFormForUpdate(@RequestParam("studentId") int theId,Model theModel){
+        Student student=studentService.findById(theId);
+
+        theModel.addAttribute("student",student);
+
+        return "student-form";
     }
 }

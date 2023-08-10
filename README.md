@@ -11,6 +11,7 @@ Read: The application provides teachers with the ability to read and access exis
 Update: Teachers are empowered to update records as necessary. Whether it's modifying contact details or other pertinent information, the update feature facilitates accurate data management.
 
 Delete: With proper authorization, teachers can safely remove records that are no longer relevant or required. This assists in maintaining a clutter-free and efficient database.
+
  ------------------------------
 Technologies/Frameworks/Design Patterns Used : 
 * Spring - Spring Boot
